@@ -1,0 +1,23 @@
+batabase nimi on urheilijat
+
+
+CREATE TABLE urheilija (
+id int(11) NOT NULL AUTO_INCREMENT,
+nimi varchar(50),
+syntymavuosi DATE,
+paino int(4),
+linkki VARCHAR(200),
+laji varchar(50),
+saavutukset varchar(150),
+PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+INSERT INTO urheilija (id, nimi, syntymavuosi, paino, linkki, laji, saavutukset) VALUES
+(1, 'Teemu Flash Selanne', '1970-07-03', 89, 'https://fi.wikipedia.org/wiki/Teemu_Sel%C3%A4nne#/media/Tiedosto:Teemu_Selanne_on_the_ice_November_2010.jpg', 'jaakiekko', 'Stanley Cup 2006'),
+(2, 'Saku Koivu', '1974-11-23', 82, 'https://fi.wikipedia.org/wiki/Saku_Koivu#/media/Tiedosto:Sakukoivu_halifax2008.png', 'jaakiekko', 'Torino 2006 Hopeaa'),
+(3, 'Jere Lehtinen', '1973-06-24', 89, 'https://fi.wikipedia.org/wiki/Jere_Lehtinen#/media/Tiedosto:Jere_Lehtinen_(Dallas).JPG)', 'jaakiekko', 'Stanley Cup 1999');
+
+SELECT * FROM urheilija;
+
+CREATE OR REPLACE USER 'janne'@'localhost' IDENTIFIED BY '2021salainen';
+GRANT SELECT,INSERT,UPDATE,DELETE ON urheilija TO 'janne'@'localhost';
